@@ -1,0 +1,9 @@
+{% extends 'base.html' %}
+{% block content %}
+  <h2>¿Estás seguro que deseas eliminar "{{ object.title }}"?</h2>
+  <form method="post">
+    {% csrf_token %}
+    <button type="submit">Confirmar</button>
+    <a href="{% url 'marketplace:product_list' %}">Cancelar</a>
+  </form>
+{% endblock %}
